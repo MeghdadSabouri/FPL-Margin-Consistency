@@ -80,7 +80,7 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     csv_path, wsi_dir, tiles_dir = "D:/Meghdad/Path-Lung-BMIRDS/MetaData_Release_1.0.csv", "D:/Meghdad/Path-Lung-BMIRDS/DHMC_wsi", "D:/Meghdad/Path-Lung-BMIRDS/tiles"
 
-    train_dataset = WSIDataset(csv_path, wsi_dir, tiles_dir, batch_size=16, is_training=True)
+    train_dataset = WSIDataset(csv_path, wsi_dir, tiles_dir, batch_size=16, is_training=True)u
     val_dataset = WSIDataset(csv_path, wsi_dir, tiles_dir, batch_size=16, is_training=False)
     train_indices, val_indices = train_test_split(range(len(train_dataset)), test_size=0.2, stratify=[train_dataset.wsi_batches[i]['class'] for i in range(len(train_dataset))], random_state=42)
 
